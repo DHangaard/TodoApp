@@ -1,0 +1,29 @@
+@startuml
+
+class Main
+
+class ItemLoader{
+ArrayList<Item> loadFile(String path)
+}
+
+class TodoList{
+ArrayList<Item> items
+
+TodoList(ArrayList<Item> items)
+void displayItems()
+}
+
+class Item{
+- String description
+- boolean isDone
+
++ void markAsDone()
+- String isDoneConverted()
+}
+
+Main *-- ItemLoader
+Main *-- TodoList
+
+TodoList *- Item : has
+
+@enduml
