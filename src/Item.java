@@ -20,11 +20,8 @@ public class Item {
 
     // Formats from boolean to String done / not done
     private String formatStatus(){
-        if (isDone){
-            return "done";
-        } else {
-            return "not done";
-        }
+        String status = isDone ? "done" : "not done";
+        return status;
     }
 
 
@@ -35,9 +32,13 @@ public class Item {
         return message;
     }
 
-    // TODO use this when writing file
+
     public String toCSVString(){
         return this.description + ", " + this.isDone;
+    }
+
+    public boolean getIsDone() {
+        return this.isDone;
     }
 
 }

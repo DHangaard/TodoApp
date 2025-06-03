@@ -1,18 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ItemLoader {
 
-    // Attributes
-
-    // Constructor
-
-
     // Methods
-    // TODO Create itemWriter/itemSaver and loader
-    // TODO try catch around scanner
     public ArrayList<Item> loadFile(String path){
 
         ArrayList<Item> items = new ArrayList<>();
@@ -36,7 +31,7 @@ public class ItemLoader {
             scanner.close();
 
         } catch (FileNotFoundException e) {
-            System.err.println("Error: " + e.getMessage()); // TODO Handle exception different
+            System.err.println("Error: " + e.getMessage());
         }
 
         return items;
@@ -60,5 +55,24 @@ public class ItemLoader {
         boolean status = Boolean.parseBoolean(tmpStatus);
 
         return status;
+    }
+
+
+    public void saveFile(String path, ArrayList<Item> items) {
+        String header = "Description, Done";
+
+        try {
+            FileWriter writer = new FileWriter(path);
+            writer.write(header + "\n");
+
+            for (Item i : items) {
+                writer.write(i.toCSVString() + "\n");
+            }
+
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Error: "+ e.getMessage());
+        }
     }
 }

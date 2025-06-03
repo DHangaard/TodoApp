@@ -3,22 +3,29 @@
 class Main
 
 class ItemLoader{
-ArrayList<Item> loadFile(String path)
++ ArrayList<Item> loadFile(String path)
+- String csvToString(String line)
+- boolean csvToStatus(String line)
++ void saveFile(String path, ArrayList<Item> items)
 }
 
 class TodoList{
-ArrayList<Item> items
+- ArrayList<Item> items
 
-TodoList(ArrayList<Item> items)
-void displayItems()
++ TodoList(ArrayList<Item> items)
++ void displayItems()
 }
 
 class Item{
 - String description
 - boolean isDone
 
++ Item(String description, boolean isDone)
 + void markAsDone()
-- String isDoneConverted()
+- String formatStatus()
++ String toString()
++ String toCSVString()
++ boolean getIsDone()
 }
 
 Main *-- ItemLoader

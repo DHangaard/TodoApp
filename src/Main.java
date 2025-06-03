@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         final String path = "data/todo.csv";
 
         ItemLoader itemLoader = new ItemLoader();
@@ -12,12 +11,20 @@ public class Main {
 
         TodoList todoList = new TodoList(items);
 
+        // Remember to set index 1 & 2 as false before running
+        // Remember to delete last index before running
         todoList.displayItems();
 
-        // Mark all items as 'done'
+        // Mark items as 'done'
         items.get(1).markAsDone();
         items.get(2).markAsDone();
+
+        // Create new item
+        todoList.addItem("Aflever bøger til Tine", false);
         System.out.println(); // Empty line
+
+        // Save changes to .csv
+        itemLoader.saveFile(path, items);
 
         todoList.displayItems();
     }

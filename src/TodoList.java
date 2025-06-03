@@ -17,10 +17,15 @@ public class TodoList {
         int counter = 1;
 
         for (Item i : items){
-            // Add counter to display numbered list
+            // Add counter to display as numbered list
             String prefix = counter + ". ";
             System.out.println(prefix + i);
             counter ++;
         }
+    }
+
+    void addItem(String description, boolean status) {
+        Item item = new Item(description, status);
+        items.add(item);
     }
 }
