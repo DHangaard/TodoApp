@@ -11,8 +11,9 @@ public class Main {
 
         TodoList todoList = new TodoList(items);
 
-        // Remember to set index 1 & 2 as false before running
-        // Remember to delete last index before running
+        // Before running:
+        // Set index 1 & 2 to false
+        // Delete last index on .csv
         todoList.displayItems();
 
         // Mark items as 'done'
