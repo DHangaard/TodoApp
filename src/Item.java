@@ -20,7 +20,7 @@ public class Item {
 
     // Formats from boolean to String done / not done
     private String formatStatus(){
-        String status = isDone ? "done" : "not done";
+        String status = this.isDone ? "done" : "not done";
         return status;
     }
 
