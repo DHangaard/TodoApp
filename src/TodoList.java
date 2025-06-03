@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class TodoList {
 
-    // Attributes
+    // ---------- Attributes ----------
     private ArrayList<Item> items;
 
 
-    // Constructor
+    // ---------- Constructor ----------
     TodoList(ArrayList<Item> items){
         this.items = items;
     }
 
 
-    // Methods
+    // ---------- Methods ----------
     void displayItems(){
         int counter = 1;
 

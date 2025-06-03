@@ -1,18 +1,18 @@
 public class Item {
 
-    // Attributes
+    // ---------- Attributes ----------
     private String description;
     private boolean isDone;
 
 
-    // Constructor
+    // ---------- Constructor ----------
     Item(String description, boolean isDone){
         this.description = description;
         this.isDone = isDone;
     }
 
 
-    // Methods
+    // ---------- Methods ----------
     public void markAsDone(){
         this.isDone = true;
     }

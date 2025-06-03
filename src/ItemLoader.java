@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ItemLoader {
 
-    // Methods
+    // ---------- Methods ----------
     public ArrayList<Item> loadFile(String path){
 
         ArrayList<Item> items = new ArrayList<>();
